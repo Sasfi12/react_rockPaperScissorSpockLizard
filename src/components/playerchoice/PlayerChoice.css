@@ -1,0 +1,14 @@
+.player-buttons {
+    width: 1000px;
+    justify-content: space-around;
+    padding: 2rem;
+    background-color: aqua;
+    display: flex;
+    gap: 2rem;
+    border: solid goldenrod 10px;
+    .player-button {
+        cursor: pointer;
+        background-color: khaki;
+        transform: scale(2);
+    }
+}
