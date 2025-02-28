@@ -27,24 +27,8 @@ function App() {
 
     setMainMenu(false)
   })
-  // const checkWinner = () => {
-  //   const playersAdvantage = rules[playerChoice]
-  //   const botsAdvantage = rules[botChoice]
-  //   if(playerChoice == botChoice) {
-  //     setResult("Egalité")
-  //   }
-  //   else if(playersAdvantage.includes(botChoice)) {
-  //     setScore(score + 1 )
-  //     setResult("You Win")
-  //   }
-  //   else if(botsAdvantage.includes(playerChoice)) {
-  //     setScore(score - 1)
-  //     setResult("You Lose")
-  //   }
-  // }
-
-  useEffect(() => {
-    if (playerChoice != "" && botChoice != "") {
+   const checkWinner = () => {
+    if (playerChoice != "") {
       const playersAdvantage = rules[playerChoice]
       const botsAdvantage = rules[botChoice]
       if (((playerChoice == botChoice))) {
@@ -55,10 +39,13 @@ function App() {
         setResult("You Win")
       }
       else if (botsAdvantage.includes(playerChoice)) {
-        setScore(score - 1)
         setResult("You Lose")
       }
     }
+   }
+
+  useEffect(() => {
+    checkWinner()
   }, [botChoice])
 
 
@@ -66,7 +53,7 @@ function App() {
 
   return (
     <>
-      <h1 style={{ transform: "scale(2)" }}>Current score : {score}</h1>
+      <h1 style={{ fontSize: "5rem" }}>Current score : {score}</h1>
       {mainMenu ?
         <PlayerChoice clickedUserChoice={playerChoose} />
 
