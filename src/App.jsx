@@ -2,6 +2,8 @@ import { useEffect, useLayoutEffect, useState } from 'react'
 import './App.css'
 import data from "./assets/data/data.json"
 import PlayerChoice from './components/playerchoice/PlayerChoice';
+import logo from "../public/logo.svg"
+import Battle from './components/battle/Battle';
 function App() {
   const [mainMenu, setMainMenu] = useState(true); // useState to see where the game is currently at.
   const [playerChoice, setPlayerChoice] = useState(""); // find the players choice 
@@ -53,19 +55,15 @@ function App() {
 
   return (
     <>
+    <div>
+      <img src={logo} alt="" />
       <h1 style={{ fontSize: "5rem" , color: "teal"}}>Current score : {score}</h1>
+    </div>
       {mainMenu ?
         <PlayerChoice clickedUserChoice={playerChoose} />
-
-
-
-
         :
-        <div>
-          <h1 style={{ fontSize: "5rem", color: "grey" }}>You choose <span style={{ color: "red" }}>{playerChoice}</span> and the computer chose <span style={{ color: "gold" }}>{botChoice}</span></h1>
-          <button style={{ fontSize: "5rem", cursor: "pointer "  ,color: "grey"  }} onClick={reset}>reset</button>
-          <h1 style={{ fontSize: "5rem", textDecoration: "underlined", color: "green" }}>{result}</h1>
-        </div>}
+        <Battle playerChoice={playerChoice} botChoice={botChoice} reset={reset} result={result}/>
+        }
     </>
   )
 }

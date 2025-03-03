@@ -1,9 +1,9 @@
 import "./PlayerChoice.css"
-import spock from "../../../public/images/icon-spock.svg"
-import rock from "../../../public/images/icon-rock.svg"
-import lizard from "../../../public/images/icon-lizard.svg"
-import scissor from "../../../public/images/icon-scissors.svg"
-import paper from "../../../public/images/icon-paper.svg"
+import spock from "../../../public/icon-spock.svg"
+import rock from "../../../public/icon-rock.svg"
+import lizard from "../../../public/icon-lizard.svg"
+import scissor from "../../../public/icon-scissors.svg"
+import paper from "../../../public/icon-paper.svg"
 
 
 
